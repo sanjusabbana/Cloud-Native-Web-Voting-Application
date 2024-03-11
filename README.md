@@ -74,27 +74,4 @@ chmod +x ./kubectl
 sudo cp ./kubectl /usr/local/bin
 export PATH=/usr/local/bin:$PATH
 
-Install awscli:
-
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
-
-Once the Cluster is ready run the command to set context:
-
-aws eks update-kubeconfig --name EKS_CLUSTER_NAME --region us-west-2
-To check the nodes in your cluster run
-
-kubectl get nodes
-If using EC2 and getting the "You must be logged in to the server (Unauthorized)" error, refer this: https://repost.aws/knowledge-center/eks-api-server-unauthorized-error
-
-Clone the github repo
-
-git clone https://github.com/N4si/K8s-voting-app.git
-Create CloudChamp Namespace
-
-kubectl create ns cloudchamp
-
-kubectl config set-context --current --namespace cloudchamp
-MONGO Database Setup
 
